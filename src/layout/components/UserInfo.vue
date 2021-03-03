@@ -15,7 +15,7 @@
           :before-upload="beforeAvatarUpload"
         >
           <img
-            :src="avatar || 'http://cdn.striveforus.com/6612.jpg'"
+            src="../../assets/avatar.jpg"
             class="user-info-avatar"
           >
         </el-upload>

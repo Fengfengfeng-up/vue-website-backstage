@@ -21,12 +21,13 @@ export default {
   methods: {
     getResource() {
       getCatList()
-        .then(res => {
+        .then((res) => {
           this.resouceList = res.data
-            .filter(item => /[jpg | png | jpeg]/i.test(item.file))
-            .map(item => ({ url: item.file }))
+            .slice(0, 20)
+            .filter((item) => /[jpg | png | jpeg]/i.test(item.file))
+            .map((item) => ({ url: item.file }))
         })
-        .catch(err => {
+        .catch((err) => {
           console.log(err)
         })
     }
