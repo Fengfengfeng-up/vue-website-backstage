@@ -10,6 +10,7 @@
       :status.sync="blog.status"
       :tags.sync="blog.tagIds"
       :dialog-visible.sync="dialogVisible"
+      :intro.sync="blog.intro"
       @save="save"
     />
   </div>
@@ -37,6 +38,7 @@ export default {
     return {
       blog: {
         title: '',
+        intro: '',
         content: '',
         html: '',
         tagIds: [],
@@ -73,7 +75,6 @@ export default {
               type: 'success'
             })
 
-            this.blog.content = ''
             this.$router.push('/blog/index')
           })
           .catch(err => {
@@ -89,7 +90,6 @@ export default {
               type: 'success'
             })
 
-            this.blog.content = ''
             this.$router.push('/blog/index')
           })
           .catch(err => {
@@ -101,8 +101,9 @@ export default {
       // 根据id获取对应博客
       getBlog(id)
         .then(res => {
-          const { content, tags, status } = res
+          const { content, intro, tags, status } = res
           this.blog.content = content
+          this.blog.intro = intro
           this.blog.status = status
           this.blog.tagIds = tags ? tags.map(item => item.id) : []
         })

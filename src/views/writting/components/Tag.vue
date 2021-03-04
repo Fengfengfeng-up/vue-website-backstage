@@ -5,6 +5,17 @@
     :visible="dialogVisible"
     width="35%"
   >
+    <el-input
+      :value="intro"
+      style="margin-bottom: 1.5rem"
+      placeholder="简介..."
+      type="textarea"
+      :autosize="{ minRows: 2, maxRows: 3 }"
+      show-word-limit
+      maxlength="45"
+      @input="(v) => $emit('update:intro', v)"
+    />
+
     <el-cascader
       :value="tags"
       :options="tagOptions"
@@ -54,11 +65,16 @@ export default {
     status: {
       type: Number,
       default: 0
+    },
+    intro: {
+      type: String,
+      default: ''
     }
   },
   data() {
     return {
       status2: 0,
+      intro2: '',
       tagOptions: [],
       cascaderProps: {
         emitPath: false,
@@ -112,10 +128,10 @@ export default {
     },
     getTagList() {
       getTagList()
-        .then(res => {
+        .then((res) => {
           this.tagOptions = res.data
         })
-        .catch(err => {
+        .catch((err) => {
           console.log(err)
         })
     }

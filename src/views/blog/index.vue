@@ -63,6 +63,10 @@ export default {
             label: '标题'
           },
           {
+            prop: 'intro',
+            label: '简介'
+          },
+          {
             prop: 'tags',
             label: '标签',
             formatter: (row, column, cellValue, index) => {
@@ -89,14 +93,14 @@ export default {
             options: () => this.tags,
             rules: { required: true, message: '请选择标签' }
           },
-          {
-            prop: 'likes',
-            label: '点赞'
-          },
-          {
-            prop: 'visits',
-            label: '阅读'
-          },
+          // {
+          //   prop: 'likes',
+          //   label: '点赞'
+          // },
+          // {
+          //   prop: 'visits',
+          //   label: '阅读'
+          // },
           {
             prop: 'comments',
             label: '评论',
