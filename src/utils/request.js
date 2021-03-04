@@ -4,10 +4,10 @@ import store from '@/store'
 import { getToken } from '@/utils/auth'
 
 const service = axios.create({
-  baseURL: process.env.VUE_APP_API || '/admin',
+  baseURL: process.env.VUE_APP_API || 'https://www.striveforus.com/admin/api',
   timeout: 5000
 })
-
+environment
 service.interceptors.request.use(
   config => {
     if (getToken()) {
