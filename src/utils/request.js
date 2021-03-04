@@ -4,7 +4,7 @@ import store from '@/store'
 import { getToken } from '@/utils/auth'
 
 const service = axios.create({
-  baseURL: process.env.VUE_APP_API || 'https://www.striveforus.com/admin/api',
+  baseURL: process.env.VUE_APP_API,
   timeout: 5000
 })
 
