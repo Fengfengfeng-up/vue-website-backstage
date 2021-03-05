@@ -74,7 +74,6 @@ export default {
   data() {
     return {
       status2: 0,
-      intro2: '',
       tagOptions: [],
       cascaderProps: {
         emitPath: false,
