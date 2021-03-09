@@ -16,6 +16,17 @@
       @input="(v) => $emit('update:intro', v)"
     />
 
+    <div style="margin-bottom: 1rem">
+      <el-select v-model="type2" placeholder="类型" filterable>
+        <el-option
+          v-for="item in typeOptions"
+          :key="item.value"
+          :label="item.label"
+          :value="item.value"
+        />
+      </el-select>
+    </div>
+
     <el-cascader
       :value="tags"
       :options="tagOptions"
@@ -46,7 +57,6 @@
 import { getTagList } from '@/api/tag'
 
 export default {
-  components: {},
   props: {
     dialogVisible: {
       type: Boolean,
@@ -57,6 +67,10 @@ export default {
       type: String,
       default: '文章'
     },
+    type: {
+      type: Number,
+      default: 0
+    },
     tags: {
       type: Array,
       default: () => [],
@@ -64,7 +78,7 @@ export default {
     },
     status: {
       type: Number,
-      default: 0
+      default: 2
     },
     intro: {
       type: String,
@@ -74,6 +88,17 @@ export default {
   data() {
     return {
       status2: 0,
+      type2: 0,
+      typeOptions: [
+        {
+          label: '博客',
+          value: 0
+        },
+        {
+          label: 'LeetCode',
+          value: 1
+        }
+      ],
       tagOptions: [],
       cascaderProps: {
         emitPath: false,
@@ -105,6 +130,12 @@ export default {
     },
     status(val) {
       this.status2 = val
+    },
+    type(val) {
+      this.type2 = val
+    },
+    type2(val) {
+      this.$emit('update:type', val)
     }
   },
   created() {

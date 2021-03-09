@@ -11,6 +11,7 @@
       :tags.sync="blog.tagIds"
       :dialog-visible.sync="dialogVisible"
       :intro.sync="blog.intro"
+      :type.sync="blog.type"
       @save="save"
     />
   </div>
@@ -101,9 +102,10 @@ export default {
       // 根据id获取对应博客
       getBlog(id)
         .then(res => {
-          const { content, intro, tags, status } = res
+          const { content, intro, tags, status, type } = res
           this.blog.content = content
           this.blog.intro = intro
+          this.blog.type = type
           this.blog.status = status
           this.blog.tagIds = tags ? tags.map(item => item.id) : []
         })

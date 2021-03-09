@@ -18,8 +18,10 @@ module.exports = {
    * In most cases please use '/' !!!
    * Detail: https://cli.vuejs.org/config/#publicpath
    */
-  outputDir: 'dist',
+  outputDir: resolve('../nest-personal-website/backstage'),
   lintOnSave: process.env.NODE_ENV === 'development',
+  publicPath: '/',
+  assetsDir: 'static',
   // lintOnSave: false,
   productionSourceMap: false,
   devServer: {

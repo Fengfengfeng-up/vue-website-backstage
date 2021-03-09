@@ -587,7 +587,7 @@ export default {
         width: 180px;
         height: 50px;
         letter-spacing: 1px;
-        background: #645cff;
+        background: #5a53e9;
         box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.13);
         border-radius: 25px;
       }

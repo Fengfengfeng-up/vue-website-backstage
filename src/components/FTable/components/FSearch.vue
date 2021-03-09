@@ -100,7 +100,7 @@ $mini: 35px;
   .search-icon {
     height: 100%;
     border-radius: 50%;
-    background-color: #ff5c5c;
+    background-color: #e99210;
     // background-color: #304156bb;
     color: #fff;
     position: absolute;
