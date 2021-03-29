@@ -30,6 +30,7 @@ export default {
   data() {
     return {
       options: {
+        checkBtn: false,
         search: 'search',
         btnSize: 'small',
         filter: 'status',
@@ -108,13 +109,13 @@ export default {
               return cellValue.length
             }
           },
-          {
-            prop: 'author',
-            label: '作者',
-            formatter: (row, column, cellValue, index) => {
-              return cellValue.name
-            }
-          },
+          // {
+          //   prop: 'author',
+          //   label: '作者',
+          //   formatter: (row, column, cellValue, index) => {
+          //     return cellValue.name
+          //   }
+          // },
           {
             prop: 'createAt',
             label: '写作日期',

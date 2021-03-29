@@ -41,6 +41,7 @@ export default {
         title: '',
         intro: '',
         content: '',
+        type: 0,
         html: '',
         tagIds: [],
         status: 0
